@@ -51,7 +51,8 @@
             /* Initial box shadows for the raised button state */
             box-shadow: 6px 6px 12px #D0D0D0, /* Soft dark shadow */
                         -6px -6px 12px #FFFFFF; /* Soft light shadow */
-            transition: all 0.3s ease; /* Smooth transition for hover state */
+            /* Adjusted transition for smoother shadow animation */
+            transition: box-shadow 0.4s ease-in-out;
         }
 
         /* Hover state for neomorphic buttons, simulating a 'pressed' action */
@@ -59,7 +60,7 @@
             /* Inset shadows to create a sunken appearance */
             box-shadow: inset 4px 4px 8px #D0D0D0, /* Inset dark shadow */
                         inset -4px -4px 8px #FFFFFF; /* Inset light shadow */
-            /* Removed transform: scale(0.98); as per previous instruction */
+            /* transform: none; (Ensures no transform is unintentionally applied) */
         }
 
         /* Styling for text selection, using a bright yellow highlight */
@@ -107,8 +108,8 @@
         <!-- Hero Section: Introduction and main call to action -->
         <section class="text-center py-16 neomorphic-block">
             <div class="mb-8">
-                <!-- Updated src to your attached image: me.jpg -->
-                <img src="me1.jpg" alt="Kishan Patel Avatar" class="rounded-full mx-auto mb-4 neomorphic-button p-2 w-32 h-32 object-cover">
+                <!-- Updated src to your attached image: me1.jpg -->
+                <img src="me1.jpg" alt="Kishan Patel Avatar" class="rounded-full mx-auto mb-4 neomorphic-button p-2 w-48 h-48 object-cover">
             </div>
             <h2 class="text-5xl md:text-6xl font-extrabold leading-tight mb-4 animate-fade-in-up text-gray-900">
                 Crafting intelligent solutions, user experiences, and <span class="text-cyan-700">innovative projects</span>.
