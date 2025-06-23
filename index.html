@@ -4,66 +4,80 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kishan Patel - Professional Portfolio</title>
+    <!-- Meta description for SEO -->
+    <meta name="description" content="Kishan Patel's professional portfolio showcasing prompt engineering, vibe coding skills, and innovative projects.">
     <!-- Tailwind CSS CDN for utility-first styling -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Poppins Font from Google Fonts for modern typography -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet">
     <style>
-        /* Base styles for the body, ensuring Poppins font and smooth anti-aliasing */
+        /* Base styles for the body, emphasizing stark contrast and bold typography */
         body {
             font-family: 'Poppins', sans-serif;
-            -webkit-font-smoothing: antialiased; /* Smoother font rendering on WebKit browsers */
-            -moz-osx-font-smoothing: grayscale; /* Smoother font rendering on Firefox */
-            background-color: #F0F0F0; /* Light gray background for a clean, soft look */
-            color: #333333; /* Darker text for readability on light backgrounds */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            background-color: #FFFCF2; /* Creamy White - Lightest from linked palette for overall background */
+            color: #252422; /* Darkest Gray/Black from linked palette for primary text */
         }
 
-        /* Custom scrollbar styling for a polished appearance */
+        /* Custom scrollbar styling for a minimalist, stark appearance */
         ::-webkit-scrollbar {
-            width: 8px; /* Width of the scrollbar */
+            width: 10px; /* Wider scrollbar */
         }
         ::-webkit-scrollbar-track {
-            background: #D0D0D0; /* Lighter gray track for the scrollbar */
-            border-radius: 10px; /* Rounded corners for the track */
+            background: #CCC5B9; /* Light Grayish Brown from linked palette for the track */
         }
         ::-webkit-scrollbar-thumb {
-            background: #A0A0A0; /* Medium gray thumb */
-            border-radius: 10px; /* Rounded corners for the thumb */
+            background: #FFD670; /* User's New Highlight - Pastel Yellow for the thumb */
+            border-radius: 0; /* Sharp corners */
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #808080; /* Darker gray thumb on hover for visual feedback */
+            background: #7BDFF2; /* User's "Secondary" - Pastel Blue on hover */
         }
 
-        /* Neomorphism effect for main content blocks and cards */
-        .neomorphic-block {
-            background-color: #FFFFFF; /* Pure white background for the 'raised' effect */
-            border-radius: 1.5rem; /* Significant rounded corners for a soft look */
-            /* Box shadows creating the embossed/debossed effect */
-            box-shadow: 8px 8px 15px #D0D0D0, /* Darker shadow for depth (bottom-right) */
-                        -8px -8px 15px #FFFFFF; /* Lighter shadow for highlight (top-left) */
-            transition: all 0.3s ease; /* Smooth transition for hover effects */
+        /* Neo-Brutalism Static Section Container Style */
+        /* Used for large sections that should NOT have hover animations */
+        .neo-brutal-section-container {
+            background-color: #FFFCF2; /* Creamy White background for the large section block */
+            border: 4px solid #252422; /* Standard brutalist border */
+            box-shadow: 10px 10px 0px #252422; /* Standard brutalist shadow */
+            border-radius: 8px; /* Slightly rounded corners */
+            /* No transition or hover transform here, keeping the section static */
         }
 
-        /* Neomorphism effect specifically for interactive buttons */
-        .neomorphic-button {
-            background-color: #F0F0F0; /* Matches body background for a 'pressed into' feel */
-            border-radius: 9999px; /* Fully rounded pill shape */
-            /* Initial box shadows for the raised button state */
-            box-shadow: 6px 6px 12px #D0D0D0, /* Soft dark shadow */
-                        -6px -6px 12px #FFFFFF; /* Soft light shadow */
-            /* Adjusted transition for smoother shadow animation */
-            transition: box-shadow 0.4s ease-in-out;
+        /* Neo-Brutalism Card/Block Style */
+        /* Used for individual cards WITHIN sections, allowing them to animate */
+        .neo-brutal-card {
+            background-color: #FF9770; /* User's "Cards" - Pastel Orange for blocks */
+            border: 4px solid #252422; /* Darkest Gray/Black from linked palette for border */
+            box-shadow: 10px 10px 0px #252422; /* Prominent, offset Darkest Gray/Black shadow */
+            border-radius: 8px; /* Slightly rounded, but still sharp corners */
+            transition: all 0.2s ease-in-out; /* Enable hover animation for individual cards */
+            color: #252422; /* Updated for better contrast on cards */
         }
 
-        /* Hover state for neomorphic buttons, simulating a 'pressed' action */
-        .neomorphic-button:hover {
-            /* Inset shadows to create a sunken appearance */
-            box-shadow: inset 4px 4px 8px #D0D0D0, /* Inset dark shadow */
-                        inset -4px -4px 8px #FFFFFF; /* Inset light shadow */
-            /* transform: none; (Ensures no transform is unintentionally applied) */
+        .neo-brutal-card:hover {
+            transform: translate(-2px, -2px); /* Slight shift on hover */
+            box-shadow: 12px 12px 0px #252422; /* Enlarged shadow on hover */
         }
 
-        /* Styling for text selection, using a bright yellow highlight */
+        /* Neo-Brutalism Button Style */
+        .neo-brutal-button {
+            background-color: #FFD670; /* User's New Highlight - Pastel Yellow for button background */
+            border: 4px solid #252422; /* Darkest Gray/Black from linked palette for border */
+            box-shadow: 8px 8px 0px #252422; /* Prominent, offset Darkest Gray/Black shadow */
+            border-radius: 8px; /* Slightly rounded, but still sharp corners */
+            transition: all 0.2s ease-in-out; /* Enable hover animation for buttons */
+            color: #252422; /* Darkest Gray/Black from linked palette for button text */
+        }
+
+        .neo-brutal-button:hover {
+            transform: translate(-2px, -2px); /* Slight shift on hover */
+            box-shadow: 10px 10px 0px #252422; /* Enlarged shadow on hover */
+            background-color: #7BDFF2; /* User's "Secondary" - Pastel Blue on hover */
+        }
+
+        /* Text selection highlight (retained from previous versions) */
         ::selection {
             background-color: #facc15; /* Bright yellow background for selected text */
             color: #1a202c; /* Dark text color for strong contrast on the yellow highlight */
@@ -72,80 +86,85 @@
             background-color: #facc15;
             color: #1a202c;
         }
+
+        /* Specific overrides for a brutalist feel */
+        h1, h2, h3, h4 {
+            font-weight: 800; /* Ensure headings are bold */
+        }
     </style>
 </head>
 <body class="min-h-screen flex flex-col">
 
-    <!-- Header Section: Contains site title and navigation links -->
-    <header class="py-6 border-b border-gray-200 bg-white shadow-md">
+    <!-- Header Section: Stark and functional -->
+    <header class="py-6 border-b-4 border-[#252422] bg-[#FFFCF2]">
         <nav class="container mx-auto px-4 flex justify-between items-center">
-            <h1 class="text-3xl font-bold text-cyan-700">Kishan Patel</h1>
+            <h1 class="text-3xl font-extrabold text-[#252422]">Kishan Patel</h1>
             <!-- Desktop Navigation Links -->
             <ul class="hidden md:flex space-x-6">
-                <li><a href="#about" class="text-gray-600 hover:text-cyan-700 transition duration-300">About</a></li>
-                <li><a href="#skills" class="text-gray-600 hover:text-cyan-700 transition duration-300">Skills</a></li>
-                <li><a href="#projects" class="text-gray-600 hover:text-cyan-700 transition duration-300">Projects</a></li>
-                <li><a href="#contact" class="text-gray-600 hover:text-cyan-700 transition duration-300">Contact</a></li>
+                <li><a href="#about" class="text-[#252422] hover:text-[#FFD670] transition duration-200 font-bold">About</a></li>
+                <li><a href="#skills" class="text-[#252422] hover:text-[#FFD670] transition duration-200 font-bold">Skills</a></li>
+                <li><a href="#projects" class="text-[#252422] hover:text-[#FFD670] transition duration-200 font-bold">Projects</a></li>
+                <li><a href="#contact" class="text-[#252422] hover:text-[#FFD670] transition duration-200 font-bold">Contact</a></li>
             </ul>
             <!-- Mobile Menu Button (Hamburger Icon) -->
-            <button class="md:hidden text-gray-800 focus:outline-none" onclick="toggleMobileMenu()" aria-label="Toggle mobile menu">
+            <button class="md:hidden text-[#252422] focus:outline-none" onclick="toggleMobileMenu()" aria-label="Toggle mobile menu">
                 <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
             </button>
         </nav>
         <!-- Mobile Menu Overlay (hidden by default, toggled by JS) -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white mt-4 mx-4 rounded-lg shadow-lg">
+        <div id="mobile-menu" class="hidden md:hidden bg-[#FFFCF2] mt-4 mx-4 border-4 border-[#252422] shadow-lg rounded-lg">
             <ul class="flex flex-col p-4 space-y-2">
-                <li><a href="#about" class="block py-2 px-3 text-gray-800 hover:bg-gray-100 rounded-md transition duration-300" onclick="toggleMobileMenu()">About</a></li>
-                <li><a href="#skills" class="block py-2 px-3 text-gray-800 hover:bg-gray-100 rounded-md transition duration-300" onclick="toggleMobileMenu()">Skills</a></li>
-                <li><a href="#projects" class="block py-2 px-3 text-gray-800 hover:bg-gray-100 rounded-md transition duration-300" onclick="toggleMobileMenu()">Projects</a></li>
-                <li><a href="#contact" class="block py-2 px-3 text-gray-800 hover:bg-gray-100 rounded-md transition duration-300" onclick="toggleMobileMenu()">Contact</a></li>
+                <li><a href="#about" class="block py-2 px-3 text-[#252422] hover:bg-[#CCC5B9] rounded-md transition duration-200 font-bold" onclick="toggleMobileMenu()">About</a></li>
+                <li><a href="#skills" class="block py-2 px-3 text-[#252422] hover:bg-[#CCC5B9] rounded-md transition duration-200 font-bold" onclick="toggleMobileMenu()">Skills</a></li>
+                <li><a href="#projects" class="block py-2 px-3 text-[#252422] hover:bg-[#CCC5B9] rounded-md transition duration-200 font-bold" onclick="toggleMobileMenu()">Projects</a></li>
+                <li><a href="#contact" class="block py-2 px-3 text-[#252422] hover:bg-[#CCC5B9] rounded-md transition duration-200 font-bold" onclick="toggleMobileMenu()">Contact</a></li>
             </ul>
         </div>
     </header>
 
     <main class="flex-grow container mx-auto px-4 py-12 space-y-12">
 
-        <!-- Hero Section: Introduction and main call to action -->
-        <section class="text-center py-16 neomorphic-block">
+        <!-- Hero Section: Bold introduction (now a static container) -->
+        <section class="text-center py-16 neo-brutal-section-container">
             <div class="mb-8">
-                <!-- Updated src to your attached image: me1.jpg -->
-                <img src="me1.jpg" alt="Kishan Patel Avatar" class="rounded-full mx-auto mb-4 neomorphic-button p-2 w-48 h-48 object-cover">
+                <!-- Avatar image, with brutalist button styling -->
+                <img src="me1.jpg" alt="Kishan Patel Avatar" class="rounded-full mx-auto mb-4 neo-brutal-button p-2 w-48 h-48 object-cover border-none" loading="lazy">
             </div>
-            <h2 class="text-5xl md:text-6xl font-extrabold leading-tight mb-4 animate-fade-in-up text-gray-900">
-                Crafting intelligent solutions, user experiences, and <span class="text-cyan-700">innovative projects</span>.
+            <h2 class="text-5xl md:text-6xl font-extrabold leading-tight mb-4 animate-fade-in-up">
+                Crafting intelligent solutions, user experiences, and <span class="text-[#FFD670]">innovative projects</span>.
             </h2>
-            <p class="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto mb-8 animate-fade-in-up delay-100">
+            <p class="text-xl md:text-2xl text-[#403D39] max-w-3xl mx-auto mb-8 animate-fade-in-up delay-100">
                 A passionate developer showcasing prompt engineering and vibe coding skills.
             </p>
-            <a href="#projects" class="inline-block neomorphic-button text-cyan-700 font-bold py-3 px-8 rounded-full animate-fade-in-up delay-200" aria-label="View My Work">
-                View My Work
+            <a href="#projects" class="inline-block neo-brutal-button font-bold py-3 px-8 text-lg animate-fade-in-up delay-200" aria-label="View My Work">
+                VIEW MY WORK
             </a>
         </section>
 
-        <!-- About Section (Hobbies): Details about personal interests -->
-        <section id="about" class="py-12 neomorphic-block">
-            <h3 class="text-4xl font-bold text-center mb-12 text-cyan-700">About Me & Hobbies</h3>
+        <!-- About Section (Hobbies): Structured and impactful (now a static container) -->
+        <section id="about" class="py-12 neo-brutal-section-container">
+            <h3 class="text-4xl font-extrabold text-center mb-12 text-[#FFD670]">ABOUT ME & HOBBIES</h3>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-8">
-                <!-- Hobby Card 1: Sketching -->
-                <div class="neomorphic-block p-8 rounded-lg transform hover:-translate-y-1">
-                    <h4 class="text-2xl font-semibold mb-4 text-gray-900">🎨 Sketching</h4>
-                    <p class="text-gray-700">
+                <!-- Hobby Card 1: Sketching (individual card, retains animation) -->
+                <div class="neo-brutal-card p-8">
+                    <h4 class="text-2xl font-bold mb-4">🎨 SKETCHING</h4>
+                    <p class="text-[#252422]">
                         I find immense joy and relaxation in sketching. It's a fantastic way to express creativity and
                         observe the world in detail. From quick doodles to intricate designs, the pencil and paper are my happy place.
                     </p>
                 </div>
-                <!-- Hobby Card 2: Singing -->
-                <div class="neomorphic-block p-8 rounded-lg transform hover:-translate-y-1">
-                    <h4 class="text-2xl font-semibold mb-4 text-gray-900">🎤 Singing</h4>
-                    <p class="text-gray-700">
+                <!-- Hobby Card 2: Singing (individual card, retains animation) -->
+                <div class="neo-brutal-card p-8">
+                    <h4 class="text-2xl font-bold mb-4">🎤 SINGING</h4>
+                    <p class="text-[#252422]">
                         Singing is another passion that allows me to connect with emotions and art. Whether it's
                         karaoke nights or just humming along to my favorite tunes, music is a constant companion.
                     </p>
                 </div>
-                <!-- Hobby Card 3: Learning New Things (Architecture) -->
-                <div class="neomorphic-block p-8 rounded-lg transform hover:-translate-y-1">
-                    <h4 class="text-2xl font-semibold mb-4 text-gray-900">📚 Learning & Architecture</h4>
-                    <p class="text-gray-700">
+                <!-- Hobby Card 3: Learning New Things (Architecture) (individual card, retains animation) -->
+                <div class="neo-brutal-card p-8">
+                    <h4 class="text-2xl font-bold mb-4">📚 LEARNING & ARCHITECTURE</h4>
+                    <p class="text-[#252422]">
                         I have an insatiable curiosity for learning. Currently, I'm deeply fascinated by architecture
                         — its history, design principles, and how it shapes our environment. Exploring new concepts is a continuous journey.
                     </p>
@@ -153,97 +172,94 @@
             </div>
         </section>
 
-        <!-- Skills Section: Showcases technical and soft skills -->
-        <section id="skills" class="py-12 neomorphic-block">
-            <h3 class="text-4xl font-bold text-center mb-12 text-cyan-700">My Skills</h3>
+        <!-- Skills Section: Clear and distinct (now a static container) -->
+        <section id="skills" class="py-12 neo-brutal-section-container">
+            <h3 class="text-4xl font-extrabold text-center mb-12 text-[#FFD670]">MY SKILLS</h3>
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-8">
-                <!-- Skill Card: Prompt Engineering -->
-                <div class="neomorphic-block p-6 rounded-lg text-center transform hover:scale-105 flex items-center justify-center min-h-[8rem]">
-                    <p class="text-xl font-semibold text-gray-900">💡 Prompt Engineering</p>
+                <!-- Skill Card: Prompt Engineering (individual card, retains animation) -->
+                <div class="neo-brutal-card p-6 text-center flex items-center justify-center min-h-[8rem]">
+                    <p class="text-xl font-bold">💡 PROMPT ENGINEERING</p>
                 </div>
-                <!-- Skill Card: C++ -->
-                <div class="neomorphic-block p-6 rounded-lg text-center transform hover:scale-105 flex items-center justify-center min-h-[8rem]">
-                    <p class="text-xl font-semibold text-gray-900">💻 C++</p>
+                <!-- Skill Card: C++ (individual card, retains animation) -->
+                <div class="neo-brutal-card p-6 text-center flex items-center justify-center min-h-[8rem]">
+                    <p class="text-xl font-bold">💻 C++</p>
                 </div>
-                <!-- Skill Card: Python -->
-                <div class="neomorphic-block p-6 rounded-lg text-center transform hover:scale-105 flex items-center justify-center min-h-[8rem]">
-                    <p class="text-xl font-semibold text-gray-900">🐍 Python</p>
+                <!-- Skill Card: Python (individual card, retains animation) -->
+                <div class="neo-brutal-card p-6 text-center flex items-center justify-center min-h-[8rem]">
+                    <p class="text-xl font-bold">🐍 PYTHON</p>
                 </div>
-                <!-- Skill Card: HTML -->
-                <div class="neomorphic-block p-6 rounded-lg text-center transform hover:scale-105 flex items-center justify-center min-h-[8rem]">
-                    <p class="text-xl font-semibold text-gray-900">🌐 HTML</p>
+                <!-- Skill Card: HTML (individual card, retains animation) -->
+                <div class="neo-brutal-card p-6 text-center flex items-center justify-center min-h-[8rem]">
+                    <p class="text-xl font-bold">🌐 HTML</p>
                 </div>
-                <!-- Skill Card: CSS -->
-                <div class="neomorphic-block p-6 rounded-lg text-center transform hover:scale-105 flex items-center justify-center min-h-[8rem]">
-                    <p class="text-xl font-semibold text-gray-900">🎨 CSS</p>
+                <!-- Skill Card: CSS (individual card, retains animation) -->
+                <div class="neo-brutal-card p-6 text-center flex items-center justify-center min-h-[8rem]">
+                    <p class="text-xl font-bold">🎨 CSS</p>
                 </div>
-                <!-- Skill Card: JavaScript -->
-                <div class="neomorphic-block p-6 rounded-lg text-center transform hover:scale-105 flex items-center justify-center min-h-[8rem]">
-                    <p class="text-xl font-semibold text-gray-900">🚀 JavaScript</p>
+                <!-- Skill Card: JavaScript (individual card, retains animation) -->
+                <div class="neo-brutal-card p-6 text-center flex items-center justify-center min-h-[8rem]">
+                    <p class="text-xl font-bold">🚀 JAVASCRIPT</p>
                 </div>
             </div>
         </section>
 
-        <!-- Projects Section: Highlights completed and current projects -->
-        <section id="projects" class="py-12 neomorphic-block">
-            <h3 class="text-4xl font-bold text-center mb-12 text-cyan-700">My Projects</h3>
+        <!-- Projects Section: Prominent and well-defined (now a static container) -->
+        <section id="projects" class="py-12 neo-brutal-section-container">
+            <h3 class="text-4xl font-extrabold text-center mb-12 text-[#FFD670]">MY PROJECTS</h3>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 px-8">
-                <!-- Current Working Project: UNIBUD Dashboard -->
-                <div class="neomorphic-block p-8 rounded-lg border-t-4 border-cyan-700 transform hover:-translate-y-1">
-                    <h4 class="text-3xl font-semibold mb-4 text-gray-900">🔥 Current Project: UNIBUD Dashboard</h4>
-                    <p class="text-gray-700 mb-4">
+                <!-- Current Working Project: UNIBUD Dashboard (individual card, retains animation) -->
+                <div class="neo-brutal-card p-8 border-t-4 border-[#FFD670]">
+                    <h4 class="text-3xl font-bold mb-4">🔥 CURRENT PROJECT: UNIBUD DASHBOARD</h4>
+                    <p class="text-[#252422]">
                         I am currently dedicating my efforts to the **UNIBUD Dashboard**, a dynamic and intuitive platform
                         designed to streamline various university-related tasks for students and faculty. This project involves
                         advanced frontend development and robust backend integration, aiming to enhance the overall
                         campus experience. It's a perfect showcase of my ability to build complex, user-centric applications.
                     </p>
-                    <a href="#" class="text-cyan-700 hover:underline">Learn More (Link to project details/repo coming soon!)</a>
+                    <a href="#" class="text-[#FFD670] hover:underline font-bold">LEARN MORE (LINK TO PROJECT DETAILS/REPO COMING SOON!)</a>
                 </div>
 
-                <!-- Past Project Example 1 -->
-                <div class="neomorphic-block p-8 rounded-lg transform hover:-translate-y-1">
-                    <h4 class="text-2xl font-semibold mb-4 text-gray-900">Project Title 1: Interactive Data Visualization</h4>
-                    <p class="text-gray-700 mb-4">
+                <!-- Past Project Example 1 (individual card, retains animation) -->
+                <div class="neo-brutal-card p-8">
+                    <h4 class="text-2xl font-bold mb-4">PROJECT TITLE 1: INTERACTIVE DATA VISUALIZATION</h4>
+                    <p class="text-[#252422]">
                         Developed an interactive web application for visualizing complex datasets. Utilized JavaScript
                         libraries like D3.js to create dynamic charts and graphs, providing users with insightful data
                         exploration capabilities. Demonstrated strong front-end development and data handling skills.
                     </p>
-                    <a href="#" class="text-cyan-700 hover:underline">View Project (Placeholder)</a>
+                    <a href="#" class="text-[#FFD670] hover:underline font-bold">VIEW PROJECT (PLACEHOLDER)</a>
                 </div>
 
-                <!-- Past Project Example 2 -->
-                <div class="neomorphic-block p-8 rounded-lg transform hover:-translate-y-1">
-                    <h4 class="text-2xl font-semibold mb-4 text-gray-900">Project Title 2: AI-Powered Text Summarizer</h4>
-                    <p class="text-gray-700 mb-4">
+                <!-- Past Project Example 2 (individual card, retains animation) -->
+                <div class="neo-brutal-card p-8">
+                    <h4 class="text-2xl font-bold mb-4">PROJECT TITLE 2: AI-POWERED TEXT SUMMARIZER</h4>
+                    <p class="text-[#252422]">
                         Built a Python-based tool that leverages natural language processing (NLP) to summarize long texts
                         into concise abstracts. Showcased proficiency in Python, NLP techniques, and API integration.
                         This project highlighted my prompt engineering skills in fine-tuning summarization models.
                     </p>
-                    <a href="#" class="text-cyan-700 hover:underline">View Project (Placeholder)</a>
+                    <a href="#" class="text-[#FFD670] hover:underline font-bold">VIEW PROJECT (PLACEHOLDER)</a>
                 </div>
-
-                <!-- Add more projects as needed -->
-
             </div>
         </section>
 
-        <!-- Contact Section: Provides ways to get in touch -->
-        <section id="contact" class="text-center py-12 neomorphic-block">
-            <h3 class="text-4xl font-bold text-cyan-700 mb-8">Get in Touch</h3>
-            <p class="text-xl text-gray-700 mb-6">
+        <!-- Contact Section: Direct and functional (now a static container) -->
+        <section id="contact" class="text-center py-12 neo-brutal-section-container">
+            <h3 class="text-4xl font-extrabold mb-8 text-[#FFD670]">GET IN TOUCH</h3>
+            <p class="text-xl text-[#403D39] mb-6">
                 I'm always open to new opportunities and collaborations. Feel free to reach out!
             </p>
-            <a href="mailto:your.email@example.com" class="inline-block neomorphic-button text-cyan-700 font-bold py-3 px-8 rounded-full transform hover:scale-105" aria-label="Email Kishan Patel">
-                Email Me
+            <a href="mailto:your.email@example.com" class="inline-block neo-brutal-button font-bold py-3 px-8 text-lg" aria-label="Email Kishan Patel">
+                EMAIL ME
             </a>
             <!-- Social media icons section (placeholders) -->
-            <div class="flex justify-center space-x-6 mt-8 text-gray-500 text-3xl">
+            <div class="flex justify-center space-x-6 mt-8 text-[#403D39] text-3xl">
                 <!-- Placeholder for LinkedIn icon -->
-                <a href="#" class="hover:text-cyan-700 transition duration-300" aria-label="LinkedIn Profile">
+                <a href="#" class="hover:text-[#FFD670] transition duration-300" aria-label="LinkedIn Profile">
                     <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zM4 6a2 2 0 110-4 2 2 0 010 4z"></path></svg>
                 </a>
                 <!-- Placeholder for GitHub icon -->
-                <a href="#" class="hover:text-cyan-700 transition duration-300" aria-label="GitHub Profile">
+                <a href="#" class="hover:text-[#FFD670] transition duration-300" aria-label="GitHub Profile">
                     <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.419 2.865 8.167 6.839 9.488.499.092.682-.217.682-.483 0-.237-.008-.867-.013-1.7-2.782.604-3.369-1.341-3.369-1.341-.454-1.15-.11-1.458-.11-1.458.37-.25.028-.245.028-.245.41.029.623.422.623.422.365.622.954.442 1.187.338.037-.26.142-.442.257-.544-2.646-.301-5.432-1.323-5.432-5.889 0-1.3.465-2.36 1.232-3.197-.123-.301-.535-1.517.117-3.155 0 0 1-.32 3.27.123.94-.26 1.94-.391 2.94-.391 1 0 2 .131 2.94.391 2.27-1.443 3.27-.123 3.27-.123.652 1.638.24 2.854.118 3.155.77.837 1.232 1.897 1.232 3.197 0 4.577-2.787 5.586-5.439 5.877.143.122.271.364.271.735 0 1.055-.009 1.905-.009 2.164 0 .265.18.577.688.483C19.135 20.165 22 16.419 22 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd"></path></svg>
                 </a>
             </div>
@@ -251,9 +267,9 @@
 
     </main>
 
-    <!-- Footer Section -->
-    <footer class="bg-gray-200 text-gray-500 py-6 text-center border-t border-gray-300">
-        <p>&copy; 2025 Kishan Patel. All rights reserved. Built with ❤️ and Vibe Coding.</p>
+    <!-- Footer Section: Simple and functional -->
+    <footer class="bg-[#252422] text-[#CCC5B9] py-6 text-center border-t-4 border-[#252422]">
+        <p>&copy; 2025 KISHAN PATEL. ALL RIGHTS RESERVED. BUILT WITH ❤️ AND VIBE CODING.</p>
     </footer>
 
     <script>
